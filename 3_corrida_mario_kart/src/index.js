@@ -61,10 +61,14 @@ async function playRaceEngine(character1, character2){
       testSkill1 = character1.MANOBRABILIDADE + dice1;
       testSkill2 = character2.MANOBRABILIDADE + dice2;
     }
-    else if(block === "💣 CONFRONTO"){
-      testSkill1 = character1.PODER + dice1;
-      testSkill2 = character2.PODER + dice2;
+    
+    if(block === "💣 CONFRONTO"){
+      let testPower1 = character1.PODER + dice1;
+      let testPower2 = character2.PODER + dice2;
     }
+
+    console.log(`🎲 ${character1.NOME} rolou o dado: ${dice1}`);
+    console.log(`🎲 ${character2.NOME} rolou o dado: ${dice2}`);
   }
 }
 
