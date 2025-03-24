@@ -1,13 +1,15 @@
 {
-  "name": "2_meu_primeiro_projeto",
+  "name": "my-project",
   "version": "1.0.0",
-  "description": "meu primeiro projeto Noje.js",
-  "main": "teste.js",
+  "description": "My first project",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "anitta": "echo \"ola mundo\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "keywords": [
+    "project", 
+    "minha primeira api"],
+  "author": "Bruno DallAgnol",
+  "license": "ISC"
 }
