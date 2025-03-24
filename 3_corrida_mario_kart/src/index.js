@@ -19,6 +19,6 @@ async function rollDice() {
 }
 
 (async function main() {
-  const diceRoll = await rollDice();
-  console.log(diceRoll);
+  console.log(
+    `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`);
 })();
