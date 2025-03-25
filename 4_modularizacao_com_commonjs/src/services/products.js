@@ -4,6 +4,11 @@ async function getFullName(codeId, productName) {
     console.log("products: " + codeId + ' -- ' + productName);
 }
 
+async function getProductLabel(productName){
+    console.log("products: " + productName);
+}
+
 module.exports = {
-    getFullName
+    getFullName,
+    getProductLabel
 };
