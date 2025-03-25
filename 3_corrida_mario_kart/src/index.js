@@ -74,8 +74,18 @@ async function playRaceEngine(character1, character2) {
     }
 
     if (block === "💣 CONFRONTO") {
-      let testPower1 = character1.PODER + dice1;
-      let testPower2 = character2.PODER + dice2;
+      let powerResult1 = character1.PODER + dice1;
+      let powerResult2 = character2.PODER + dice2;
+
+      console.log(`-> ${character1.NOME} confrontou com ${character2.NOME}`);
+
+      await logRollResult(character1.NOME, "PODER", dice1, character1.PODER);
+      await logRollResult(character2.NOME, "PODER", dice2, character2.PODER);
+      
+      character2.PONTOS -= powerResult1 > powerResult2 && character2.PONTOS > 0 ? 1 : 0;
+      character1.PONTOS -= powerResult1 < powerResult2 && character1.PONTOS > 0 ? 1 : 0;
+
+      console.log(powerResult1 === powerResult2 ? "Empate! - Ninguém perdeu ponto" : ``);
     }
 
     // verificar vencedor
