@@ -20,25 +20,29 @@ async function rollDice() {
 
 async function getRandomBlock() {
   let random = Math.random();
-  let result
+  let result;
 
   switch (true) {
     case random < 0.33:
-      result = "⬆️ RETA"
+      result = "⬆️ RETA";
       break;
     case random < 0.66:
-      result = "⤴️ CURVA"
+      result = "⤴️ CURVA";
       break;
     default:
-      result = "💣 CONFRONTO"
+      result = "💣 CONFRONTO";
       break;
   }
 
   return result;
 }
 
-async function playRaceEngine(character1, character2){
-  for(let round = 1; round <= 5; round++){
+async function logRollResult(characterName, block, diceResult, attribute) {
+  console.log(`🏎 ${characterName} 🎲 rolou um dado de ${block} ${diceResult}`);
+}
+
+async function playRaceEngine(character1, character2) {
+  for (let round = 1; round <= 5; round++) {
     console.log(`🏁 Rodada ${round} 🏁`);
 
     // sortear bloco
@@ -53,28 +57,32 @@ async function playRaceEngine(character1, character2){
     let testSkill1 = 0;
     let testSkill2 = 0;
 
-    if(block === "⬆️ RETA"){
+    if (block === "⬆️ RETA") {
       testSkill1 = character1.VELOCIDADE + dice1;
       testSkill2 = character2.VELOCIDADE + dice2;
-    }
-    else if(block === "⤴️ CURVA"){
+
+      await logRollResult(character1.NOME, "VELOCIDADE", dice1, character1.VELOCIDADE);
+      await logRollResult(character2.NOME, "VELOCIDADE", dice2, character2.VELOCIDADE);
+
+    } else if (block === "⤴️ CURVA") {
       testSkill1 = character1.MANOBRABILIDADE + dice1;
       testSkill2 = character2.MANOBRABILIDADE + dice2;
+
+      await logRollResult(character1.NOME, "MANOBRABILIDADE", dice1, character1.MANOBRABILIDADE);
+      await logRollResult(character2.NOME, "MANOBRABILIDADE", dice2, character2.MANOBRABILIDADE);
     }
-    
-    if(block === "💣 CONFRONTO"){
+
+    if (block === "💣 CONFRONTO") {
       let testPower1 = character1.PODER + dice1;
       let testPower2 = character2.PODER + dice2;
     }
-
-    console.log(`🎲 ${character1.NOME} rolou o dado: ${dice1}`);
-    console.log(`🎲 ${character2.NOME} rolou o dado: ${dice2}`);
   }
 }
 
 (async function main() {
   console.log(
-    `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`);
+    `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} começando...\n`
+  );
 
   await playRaceEngine(player1, player2);
-  })();
+})();
