@@ -12,11 +12,12 @@ const item2 = await createItem("hotwheels lamborghini", 39.99, 3);
 // adicionei 2 itens no carrinho
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
+await cartService.displayCart(myCart);
 
 // deletei 2 itens do carrinho
-await cartService.deleteItem(myCart, item2.name);
-await cartService.deleteItem(myCart, item1.name);
+// await cartService.deleteItem(myCart, item2.name);
+// await cartService.deleteItem(myCart, item1.name);
 
-console.log("Shopping Cart TOTAL is: ");
+console.log("\nShopping Cart TOTAL is: ");
 await cartService.calculateTotal(myCart);
 
