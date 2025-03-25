@@ -63,8 +63,9 @@ async function playRaceEngine(character1, character2) {
 
       await logRollResult(character1.NOME, "VELOCIDADE", dice1, character1.VELOCIDADE);
       await logRollResult(character2.NOME, "VELOCIDADE", dice2, character2.VELOCIDADE);
+    }
 
-    } else if (block === "⤴️ CURVA") {
+    if (block === "⤴️ CURVA") {
       testSkill1 = character1.MANOBRABILIDADE + dice1;
       testSkill2 = character2.MANOBRABILIDADE + dice2;
 
@@ -76,6 +77,19 @@ async function playRaceEngine(character1, character2) {
       let testPower1 = character1.PODER + dice1;
       let testPower2 = character2.PODER + dice2;
     }
+
+    // verificar vencedor
+    if (testSkill1 > testSkill2) {
+      console.log(`${character1.NOME} marcou um ponto!`);
+      character1.PONTOS++;
+    }else if (testSkill1 < testSkill2) {
+      console.log(`${character2.NOME} marcou um ponto!`);
+      character2.PONTOS++;
+    }else {
+      console.log("Empate!");
+    }
+
+    console.log("_______________________________________________________")
   }
 }
 
