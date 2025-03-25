@@ -1,4 +1,4 @@
-const p = require("./services/products");
+const product = require("./services/products");
 const config = require("./services/config");
 
 async function main() {
@@ -7,8 +7,12 @@ async function main() {
 //   p.getFullName("508", "mouse");
 //   p.getProductLabel("teclado");
 
+console.log(product.productType);
 console.log(config.devArea);
 console.log(config.client);
+product.getFullName("408", "mousepad");
+product.getFullName("508", "mouse");
+product.getProductLabel("teclado");
 }
 
 main();
