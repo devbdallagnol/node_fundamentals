@@ -109,11 +109,23 @@ async function playRaceEngine(character1, character2) {
     }else if (testSkill1 < testSkill2) {
       console.log(`${character2.NOME} marcou um ponto!`);
       character2.PONTOS++;
-    }else {
-      console.log("Empate!");
     }
 
     console.log("_______________________________________________________")
+  }
+}
+
+async function declareWinner(character1, character2) {
+  console.log("🏁🏆 Corrida finalizada! 🏆🏁");
+  console.log(`${character1.NOME} fez ${character1.PONTOS} ponto(s)!`);
+  console.log(`${character2.NOME} fez ${character2.PONTOS} ponto(s)!`);
+
+  if (character1.PONTOS > character2.PONTOS) 
+    console.log(`\n-> 🥇 ${character1.NOME} é o vencedor! 🥇`);
+  else if (character1.PONTOS < character2.PONTOS)
+    console.log(`\n-> 🥇 ${character2.NOME} é o vencedor! 🥇`);
+  else {
+    console.log("Empate!");
   }
 }
 
@@ -123,4 +135,5 @@ async function playRaceEngine(character1, character2) {
   );
 
   await playRaceEngine(player1, player2);
+  await declareWinner(player1, player2);
 })();
