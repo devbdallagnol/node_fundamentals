@@ -1,0 +1,13 @@
+{
+  "name": "4_modularizacao_com_commonjs",
+  "version": "1.0.0",
+  "description": "project to study commonjs modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
