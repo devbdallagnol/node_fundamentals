@@ -1,0 +1,13 @@
+{
+  "name": "10_projeto_qrcode",
+  "version": "1.0.0",
+  "description": "kit de utilizades para e-commerces",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+}
