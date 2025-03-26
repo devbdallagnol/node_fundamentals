@@ -6,4 +6,5 @@ async function createPassword(password) {
   console.log(chalk.green("Password: " + password));
 }
 
+
 export default createPassword;
