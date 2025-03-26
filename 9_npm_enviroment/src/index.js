@@ -1,7 +1,9 @@
-import connectToDatabase from "./database/data";
+// import connectToDatabase from "./database/data";
 
 async function main(){
-    await connectToDatabase('sasuke', 'uchiha');
+    console.log(process.env.USERDATABASE);
+
+    // await connectToDatabase('sasuke', 'uchiha');
 }
 
 main();
