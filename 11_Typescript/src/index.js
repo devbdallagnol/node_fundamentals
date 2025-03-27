@@ -1,3 +1,5 @@
-let name = "Brunão"
-
-console.log(`Hello, world! ${name}`);
+function main() {
+    var myEmail = "brunao@dio.me";
+    console.log(myEmail);
+}
+main();
