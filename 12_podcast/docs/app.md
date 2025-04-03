@@ -47,4 +47,4 @@ Vou retornar em uma API Rest (json) o nome do podcast, nome do episodio, imagem 
 
 #### Arquitetura Básica do Projeto
 
-![alt text](image.png)
+![alt text](arch/image.png)
