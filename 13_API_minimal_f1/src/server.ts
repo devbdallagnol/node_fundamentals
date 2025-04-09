@@ -6,6 +6,13 @@ const teams = [
   { id: 1, name: "McLaren", base: "Woking, United Kingdom" },
   { id: 2, name: "Mercedes", base: "Brackley, United Kingdom" },
   { id: 3, name: "Red Bull Racing", base: "Milton Keynes, United Kingdom" },
+  { id: 4, name: "Ferrari", base: "Maranello, Italy" },
+  { id: 5, name: "Aston Martin", base: "Silverstone, United Kingdom" },
+  { id: 6, name: "Alpine", base: "Enstone, United Kingdom" },
+  { id: 7, name: "Haas", base: "Kannapolis, United States" },
+  { id: 8, name: "Stake F1 Team Kick Sauber", base: "Hinwil, Switzerland" },
+  { id: 9, name: "Visa Cash App RB", base: "Faenza, Italy" },
+  { id: 10, name: "Williams", base: "Grove, United Kingdom" },
 ];
 
 const drivers = [
@@ -35,13 +42,13 @@ server.get<{ Params: DriverParams }>(
     const driver = drivers.find((d) => d.id === id);
 
     if (!driver) {
-    response.type("application/json").code(404);
-    return { message: "Driver not found" };
-    }else{
-        response.type("application/json").code(200);
-        return { driver };
+      response.type("application/json").code(404);
+      return { message: "Driver not found" };
+    } else {
+      response.type("application/json").code(200);
+      return { driver };
     }
-}
+  }
 );
 
 server.listen({ port: 3333 }, () => {
