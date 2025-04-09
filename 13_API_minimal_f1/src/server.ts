@@ -2,29 +2,30 @@ import fastify from "fastify";
 
 const server = fastify({logger: true});
 
-// listar as equipes de f1
-// implentar o verbo http GET
-// preciso passar uma rota para ele
-// preciso criar meu controller
+const teams = [
+    {id: 1, name: "McLaren", base: "Woking, United Kingdom"},
+    {id: 2, name: "Mercedes", base: "Brackley, United Kingdom"},
+    {id: 3, name: "Red Bull Racing", base: "Milton Keynes, United Kingdom"},
+]
+
+const drivers = [
+    {id: 1, name: "Max Verstappen", team: "Red Bull Racing"},
+    {id: 2, name: "Lewis Hamilton", team: "Ferrari"},
+    {id: 2, name: "Lando Norris", team: "McLaren"},
+]
+
+
+
 server.get("/teams", async(request, response) => {
     response.type("application/json").code(200)
-
-    return [
-        {id: 1, name: "Ferrari"},
-    ]
+    return { teams };
 })
 
 server.get("/drivers", async(request, response) => {
     response.type("application/json").code(200)
-    return [
-        {id: 1, name: "Charles Leclerc", team: "Ferrari"},
-        {id: 2, name: "Carlos Sainz", team: "Ferrari"},
-        {id: 3, name: "Lewis Hamilton", team: "Mercedes"}
-    ]
+    return { drivers };
 })
 
-
-// escutar alguma porta, para o q algum client possa se comunicar com ele
 server.listen({port: 3333}, ()=>{
     console.log("Server init")
 })
