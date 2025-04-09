@@ -23,6 +23,9 @@ export const getFilterEpisodes = async (
   req: IncomingMessage,
   res: ServerResponse
 ) => {
+
+  const queryString = req.url?.split("?p=")[1] || "";
+
   const content: PodcastTransferModel = await serviceFilterEpisodes(req.url);
 
   res.writeHead(content.statusCode, defaultContent);
