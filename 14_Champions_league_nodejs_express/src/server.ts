@@ -1,9 +1,14 @@
 import express, { Request, Response } from "express";
 
 const app = express();
+const port = process.env.PORT;
+
+app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.status(200).json({player: "Beckham", team: "Manchester United"});
 });
 
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`🔥 Server running at port http://localhost/${port}`);
+});
