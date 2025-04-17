@@ -61,6 +61,15 @@ export const updatePlayerService = async (
     id: number,
     statistics: StatisticsModel
   ) => {
-    
+    const data = await PlayerRepository.findAndModifyPlayer(id, statistics);
+    let response = null;
+  
+    if (Object.keys(data).length === 0) {
+      response = await HttpResponse.badRequest();
+    } else {
+      response = await HttpResponse.ok(data);
+    }
+  
+    return response;
   };
 
