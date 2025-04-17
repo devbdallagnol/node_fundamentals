@@ -1,4 +1,5 @@
 import { PlayerModel } from "../models/player-model";
+import { StatisticsModel } from "../models/statistics-model";
 import * as PlayerRepository from "../repositories/players-repository";
 import * as HttpResponse from "../utils/http-helper";
 
@@ -55,3 +56,11 @@ export const deletePlayerService = async (id: number) => {
 
   return response;
 };
+
+export const updatePlayerService = async (
+    id: number,
+    statistics: StatisticsModel
+  ) => {
+    
+  };
+

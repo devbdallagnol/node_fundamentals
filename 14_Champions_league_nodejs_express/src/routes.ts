@@ -10,5 +10,7 @@ router.get("/players/:id", PlayerController.getPlayerById);
 router.post("/players", PlayerController.postPlayer);
 // delete
 router.delete("/players/:id", PlayerController.deletePlayer);
+// patch
+router.patch("/players/:id", PlayerController.updatePlayer);
 
 export default router;
